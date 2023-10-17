@@ -1,0 +1,573 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  height: 100vh;
+}
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  display: flex;
+  background-image: radial-gradient(circle at top left, red, orange, yellow, green, blue, purple);
+  height: 100%;
+  width: 100%;
+  margin-top: 3vw;
+  box-shadow: 0 0 1vw rgba(20, 20, 20, 0.871);
+}
+
+.footer-logo {
+  width: 3vw;
+  height: 3vw;
+  margin: 1vw;
+  background-color: #f0f0f0;
+  border-radius: 100%;
+}
+
+.footer-text {
+  margin:auto 0 auto 1vw;
+  font-size: 2vw;
+  text-align: center;
+  color: #f0f0f0;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12vw;
+  padding: 0;
+}
+
+.nav-menu ul li {
+  text-transform: uppercase;
+  padding: 0.4vw 0.6vw;
+  letter-spacing: 0.1vw;
+  font-size: 1vw;
+  border: double 0.15vw transparent;
+}
+
+.tab.active {
+  border-radius: 10px;
+  background-image: linear-gradient(white, white), 
+  linear-gradient(135deg,red 0%, orange 10%, yellow 20%, green 30%, blue 40%, purple 50%, 
+  purple 50%, blue 60%, green 70%, yellow 80%, orange 90%, red 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 200% 100%;
+  animation: borde-spin 10s ease-in-out infinite alternate;
+}
+
+@keyframes borde-spin {
+  0% {background-position: right;}
+  100% {background-position: left;}
+}
+
+.tab.active a {
+  color: black;
+}
+
+.appname {
+  font-weight: 600;
+  font-size: 5vw;
+  letter-spacing: 0.1vw;
+  margin: auto;
+  padding: 0 0 1vw 0;
+  color: rgba(20, 20, 20, 0.871);
+  text-decoration: inherit;
+  background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.admin-title {
+  font-weight: 600;
+  font-size: 5vw;
+  letter-spacing: 0.1vw;
+  margin: 2vw auto auto auto;
+  padding: 0 0 1vw 0;
+  color: rgba(20, 20, 20, 0.871);
+  text-decoration: inherit;
+  background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.separator {
+  height: 0.1vw;
+  border: 0;
+  margin: 0.1vw 0px;
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, purple);
+  background-position: center center;
+}
+
+.contenedor-nav {
+  margin: 0 0 2vw 0;
+}
+
+iframe {
+  width: 26.7vw;
+  height: 15vw;
+  margin: 3vw;
+  border: double 1px transparent;
+  border-radius: 10px;
+  background-size: 100%;
+  background-image: linear-gradient(#f0f0f0, #f0f0f0), radial-gradient(circle at top left, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #800080);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.datetime {
+  text-align: right;
+  font-size: 1vw;
+  color: rgba(20, 20, 20, 0.296);
+  margin: 1vw 2vw 1vw 0;
+}
+
+.section {
+  width: 60%;
+  padding: 1.2vw 0;
+  margin: 2vw auto;
+  cursor: pointer;
+  border: double 3px transparent;
+  border-radius: 10px;
+  background-size: 100%;
+  background-image: linear-gradient(#f0f0f0, #f0f0f0), radial-gradient(circle at top left, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #800080);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: background-size 0.5s;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+}
+
+.section a {
+  color: #f0f0f0;
+}
+
+.section:hover {
+  background-size: 120%;
+}
+
+.section.a {
+  background-image: url('./assets/home/bienvenido.png'), radial-gradient(circle at top left, red, orange, yellow, green, blue, purple);
+  background-position: center 60%;
+}
+
+.section.b {
+  background-image: url('./assets/home/conocenos.png'), radial-gradient(circle at top left, red, orange, yellow, green, blue, purple);
+}
+
+.section.c {
+  background-image: url('./assets/home/publicaciones.png'), radial-gradient(circle at top left, red, orange, yellow, green, blue, purple);
+}
+
+.section.d {
+  background-image: url('./assets/home/contacto.png'), radial-gradient(circle at top left, red, orange, yellow, green, blue, purple);
+}
+
+.section.x {
+  background-image: url('./assets/aboutus/historia.png'), radial-gradient(circle at top left, red, orange, yellow, green, blue, purple);
+}
+
+.section.y {
+  background-image: url('./assets/aboutus/imagen.png'), radial-gradient(circle at top left, red, orange, yellow, green, blue, purple);
+}
+
+.section.z {
+  background-image: url('./assets/aboutus/miembros.png'), radial-gradient(circle at top left, red, orange, yellow, green, blue, purple);
+}
+
+a {
+  font-weight: 600;
+  color: rgba(20, 20, 20, 0.871);
+  text-decoration: inherit;
+}
+
+.section:hover a, a:hover {
+  background-image: -webkit-linear-gradient(left, red, orange, yellow, green, blue, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-text {
+  width: 60%;
+  margin: auto;
+  font-size: 1.05vw;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.visible {
+  max-height: 10vw; /* Altura máxima para mostrar el texto */
+}
+
+.miembros.visible {
+  max-height: 36vw; /* Altura máxima para mostrar el texto */
+}
+
+.contacto-text {
+  width: 60%;
+  margin: auto;
+  font-size: 1.05vw;
+}
+
+.redes {
+  display: flex;
+}
+
+.rrss {
+  width: 7vw;
+  height: 7vw;
+  margin: 2vw auto;
+  background-image: url('./assets/contact/yt.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: background-image 0.5s;
+}
+
+.rrss.yt:hover {
+  background-image: url('./assets/contact/ytr.png');
+  cursor: pointer;
+}
+
+.rrss.ig {
+  background-image: url('./assets/contact/ig.png');
+}
+
+.rrss.ig:hover {
+  background-image: url('./assets/contact/igr.png');
+  cursor: pointer;
+}
+
+.rrss.tt {
+  background-image: url('./assets/contact/tt.png');
+}
+
+.rrss.tt:hover {
+  background-image: url('./assets/contact/ttr.png');
+  cursor: pointer;
+}
+
+.titulo {
+  font-size: 4vw;
+  letter-spacing: 0.2vw;
+}
+
+.logo {
+  width:10%;
+  padding: 1vw 0 0 0;
+  margin: auto;
+  transition: all 0.5s;
+}
+
+.logo:hover {
+  transform: scale(1.25);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.div-publicacion {
+  width: 60%;
+  padding: 1.2vw 0;
+  margin: 2vw auto;
+  border: double 3px transparent;
+  border-radius: 10px;
+  background-size: 100%;
+  background-image: linear-gradient(#f0f0f0, #f0f0f0), radial-gradient(circle at top left, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #800080);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.publicacion-text {
+  width: 80%;
+  margin: auto;
+  font-size: 1.05vw;
+}
+
+.titulo-publicacion {
+  font-size: 1.8vw;
+  margin: 1.5vw;
+}
+
+.filtros {
+  display: flex;
+  width: 60%;
+  margin: auto;
+}
+
+.members {
+  font-size: 1.2vw;
+  text-align: center;
+  display: flex;
+  margin: auto 2vw;
+}
+
+.member-select {
+  width: 10vw;
+}
+
+.fecha {
+  font-size: 1.2vw;
+  text-align: center;
+  margin: auto 1vw auto auto;
+}
+
+.boton-filtro {
+  border-radius: 50%;
+  width: 2.5vw;
+  height: 2.5vw;
+  margin: auto 1vw auto 2vw;
+  transition: all 0.5s;
+}
+
+.boton-filtro:hover {
+  transform: scale(1.5);
+}
+
+.boton-filtro:active {
+  transform: rotate(180deg)
+}
+
+.flecha {
+  font-size: 1.5vw;
+}
+
+.admin-tab {
+  cursor: pointer;
+}
+
+.main-container {
+  width: 90%;
+  height: 25vw;
+  margin: 2vw auto;
+  padding: 2vw;
+}
+
+.slider-container {
+  position: relative;
+  height: 100%;
+}
+
+.container-images {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.elemento-lista {
+  display: flex;
+}
+
+.foto-miembro {
+  max-width: 24vw;
+  max-height: 23vw;
+  margin: 0 2vw 2vw;
+  border: double 1px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(#f0f0f0, #f0f0f0), radial-gradient(circle at top left, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #800080);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.detalles-miembro {
+  width: 20vw;
+  height: 20vw;
+  margin: 1vw 3vw 0 0;
+}
+
+.detalles-miembro div {
+  margin: 0 0 1vw 0;
+}
+
+.ficha-miembro {
+  height: 25vw;
+}
+
+.leftArrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 32px;
+  font-size: 50px;
+  font-weight: 700;
+  color: rgba(20, 20, 20, 0.871);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 32px;
+  font-size: 50px;
+  font-weight: 700;
+  color: rgba(20, 20, 20, 0.871);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+}
+
+.dot-container-item {
+  margin: 8px 3px;
+  cursor: pointer;
+  font-size: 1vw;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.dot-container-item.active {
+  transform: scale(1.5);
+  border-radius: 50%;
+  background-image: -webkit-linear-gradient(left, red, orange, yellow, green, blue, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nombre-miembro {
+  font-size: 2vw;
+  font-weight: 700;
+  background-image: -webkit-linear-gradient(-20deg, red, orange, yellow, green, blue, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tabla-datos {
+  width: 60%;
+  margin: 4vw auto;
+  background-color: white;
+  border-radius: 2vw;
+}
+
+.tabla-header {
+  padding: 2vw;
+  font-size: 1vw;
+  color: black;
+}
+
+.tabla-celda {
+  padding: 1vw 0;
+  font-size: 0.8vw;
+}
+
+.btn {
+  background-image: radial-gradient(circle at top right, red, orange, yellow, green, blue, purple);
+  background-size: 260%;
+  border: transparent;
+  margin: 0 1vw;
+  box-shadow: 0.2vw 0.2vw 0.7vw rgba(20, 20, 20, 0.296);
+  color: #f0f0f0;
+}
+
+.btn.eliminar {
+  background-image: radial-gradient(circle at top left, red, orange, yellow, green, blue, purple);
+  color: rgba(20, 20, 20, 0.871);
+}
+
+.btn.cancelar {
+  padding: 0.5vw 1vw;
+  font-size: 1vw;
+  margin: auto auto 1vw auto;
+}
+
+.btn.confirmar {
+  background-image: radial-gradient(circle at top left, red, orange, yellow, green, blue, purple);
+  color: rgba(20, 20, 20, 0.871);
+  padding: 0.5vw 1vw;
+  font-size: 1vw;
+  margin: auto auto 1vw auto;
+}
+
+.icon {
+  padding: 0.5vw 1vw;
+  font-size: 1vw;
+  transition: transform 0.5s;
+}
+
+.btn:hover .icon {
+  transform: scale(1.5);
+}
+
+.btn.editar:active {
+  color: rgba(20, 20, 20, 0.871);
+}
+
+.btn.eliminar:active {
+  color: #f0f0f0;
+}
+
+.input-search {
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #800080);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  font-size: 1.2vw;
+  text-align: center;
+  display: flex;
+  margin: 2vw 0 0 1vw;
+  border-radius: 10px;
+  border: solid 1px transparent;
+  color: rgba(0, 0, 0, 0.871);
+}
+
+.input-search:focus {
+  border: solid 2px transparent;
+  outline: none;
+}
+
+.label-search {
+  font-size: 1.2vw;
+  text-align: center;
+  display: flex;
+  margin: 2.5vw 0 0 2vw;
+}
+
+.btn.add {
+  background-image: radial-gradient(circle at top left, red, orange, yellow, green, blue, purple);
+  background-size: 110%;
+  font-size: 1.2vw;
+  text-align: center;
+  margin: 2vw 2vw auto auto;
+  color: white;
+  padding: 0.5vw 1vw;
+  transition: all 0.5s;
+}
+
+.btn.add:hover {
+  transform: scale(1.2);
+}
+
+.btn.add:active {
+  transform: scale(0.7);
+}
+
+.d-title {
+  text-align: center;
+}
+
+.div-login {
+  display: flex;
+  margin: auto;
+  width: 60%;
+  padding: auto;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1)
+}
