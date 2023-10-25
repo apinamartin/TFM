@@ -106,11 +106,9 @@ def add_post(post: Publicacion):
 def update_post(id_post: int, post: Publicacion):
     mydb = connect_ddbb()
     mycursor = mydb.cursor()
-    sql = "UPDATE posts SET title = %s, descrip = %s, content = %s, url = %s, upload_time = %s WHERE id_post = %s"
-    val = (post.title, post.descrip, post.content, post.url, post.id_post)
-    mycursor.execute(sql, val)
+    mycursor.execute(f"UPDATE posts SET title = '{post.title}', content = '{post.content}', url = '{post.url}', upload_time = '{post.upload_time}' WHERE id_post = {id_post}")
     mydb.commit()
-    return {"message": f"Publicación {post.id_post} actualizada con éxito"}
+    return {"message": f"Publicación {id_post} actualizada con éxito"}
 # DELETE -- PUBLICACIONES
 @app.delete("/api/posts/{id_post}")
 def delete_post(id_post: int):
@@ -160,6 +158,15 @@ def delete_from_post(id_post: int):
     mycursor = mydb.cursor()
     mycursor.execute(f"DELETE FROM members_posts WHERE id_post = {id_post}")
     mydb.commit()
+
+@app.put("/api/miembros_posts/put/{id_post}")
+def test( id_post: int, posts ):
+    delete_from_post(id_post)
+    print(posts)
+    list_of_posts = posts.split(',')
+    for post in list_of_posts:
+        miembro_aux = Miembro_Publicacion(id_post=int(id_post), id_member=int(post[0]))
+        add_miembros_posts(miembro_aux)
 
 # Endpoint para validar las credenciales de inicio de sesión
 @app.get("/api/login")

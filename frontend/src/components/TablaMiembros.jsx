@@ -118,7 +118,7 @@ export const TablaMiembros = () => {
       birthday: "",
       zodiac: "",
       descrip: "",
-      url: "src/assets/members/placeholder.png"
+      url: ""
     });
     setOpenDialog(true);
   };

@@ -56,7 +56,7 @@ export const SwiperMiembros = () => {
             {
               members.map((item) => {
                 return <li key={item[0]} className="elemento-lista">
-                    <img src={item[5]} className="foto-miembro"/>
+                    <img src={item[5] ? item[5] : "src/assets/logo.png"} className="foto-miembro"/>
                     <div className="detalles-miembro">
                       <div className="nombre-miembro"><h className="nombre-miembro">{item[1]}</h></div>
                       <div><b>{item[2].substring(8,10)}{item[2].substring(4,8)}{item[2].substring(0,4)} - {item[3]}</b></div>
