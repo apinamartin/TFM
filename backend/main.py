@@ -45,8 +45,8 @@ class Miembro_Publicacion(BaseModel):
 def connect_ddbb():
     mydb = mysql.connector.connect(
         host="localhost",
-        user="root", # IMPORTANTE MODIFICAR Y PONER EL USUARIO Y CONTRASEÑA PROPIOS EN LOCAL
-        password="root",
+        user="", # IMPORTANTE MODIFICAR Y PONER EL USUARIO Y CONTRASEÑA PROPIOS EN LOCAL
+        password="",
         database="rainbow_set"
     )
     return mydb
