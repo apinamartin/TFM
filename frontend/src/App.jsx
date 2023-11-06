@@ -9,7 +9,19 @@ import { Admin } from './pages/Admin';
 
 function App() {
 
-  const [activeTab, setActiveTab] = useState(1);
+  const checkActiveTab = () => {
+    if (location.pathname === '/contacto') {
+      return 4
+    } if (location.pathname === '/publicaciones') {
+      return 3
+    } if (location.pathname === '/aboutus') {
+      return 2
+    } else {
+      return 1
+    }
+  }
+
+  const [activeTab, setActiveTab] = useState(checkActiveTab());
 
   const handleTabClick = (tabIndex) => {
     setActiveTab(tabIndex);

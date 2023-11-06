@@ -19,7 +19,6 @@ export const TablaPublicaciones = () => {
   const [openWarning, setOpenWarning] = useState(false);
   const [openConfirm, setOpenConfirm] = useState(false);
   const [editMode, setEditMode] = useState(false);
-  const [fechaActual, setFechaActual] = useState(new Date());
   /*const [isLoading, setIsLoading] = useState(true);*/
   const [posts, setPosts] = useState([]);
   const [miembros, setMiembros] = useState([]);
@@ -34,6 +33,17 @@ export const TablaPublicaciones = () => {
   const [currentPostId, setCurrentPostId] = useState(null);
   const [eliminar, setEliminar] = useState(false);
 
+  const dateOptions = {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+    timeZone: 'Europe/Madrid'
+  };
+  
   useEffect(() => {
     fetch("http://localhost:8000/api/posts")
       .then((response) => response.json())
@@ -173,27 +183,36 @@ export const TablaPublicaciones = () => {
   };
 
   const handleAddDialogOpen = () => {
+    let fecha = new Date();
+
+    let fechaMadrid = fecha.toLocaleString('es-ES', dateOptions);
+    fechaMadrid = fechaMadrid.replace(/(\d{2})\/(\d{2})\/(\d{4}), (\d{2}:\d{2})/, '$3-$2-$1 $4');
+
     setEditMode(false);
-    setFechaActual(new Date());
     setMiembrosPost([]);
     setNewPost({
       title: "",
       content: "",
       url: "",
-      upload_time: fechaActual.toISOString().slice(0, 19).replace("T", " "),
+      upload_time: fechaMadrid
     });
     setOpenDialog(true);
   };
+  
   const handleEditDialogOpen = (IdPost, postData) => {
+    let fecha = new Date();
+
+    let fechaMadrid = fecha.toLocaleString('es-ES', dateOptions);
+    fechaMadrid = fechaMadrid.replace(/(\d{2})\/(\d{2})\/(\d{4}), (\d{2}:\d{2})/, '$3-$2-$1 $4');
+
     setEditMode(true);
-    setFechaActual(new Date());
     getMiembros(IdPost);
     setCurrentPostId(IdPost);
     setNewPost({
       title: postData[1],
       content: postData[2],
       url: postData[3],
-      upload_time: fechaActual.toISOString().slice(0, 19).replace("T", " "),
+      upload_time: fechaMadrid
     });
     setOpenDialog(true);
   };
